@@ -20,6 +20,10 @@ app.get("/notes", function(req, res){
     res.sendFile(path.join(__dirname, "public/notes.html"))
 })
 
+app.get("/api/notes", function(req, res){
+    return res.json(notesDb);})
+
+    
 // 
 // create note - takes in JSON input
 // add.post("/api/notes/title" ,)
