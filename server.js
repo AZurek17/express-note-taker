@@ -1,13 +1,14 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-
 const notesDb = require('./db/db.json');
-const PORT = 3000;
 
+const PORT = 3000;
 const app = express();
 
+
 //generating unique ids
+
 const uuid = () => {
     return Math.floor((1 + Math.random()) * 0x10000)
     .toString(16)
@@ -17,7 +18,9 @@ const uuid = () => {
 //Middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static('public'));
+
 
 //GET Routes
 app.get("/", (req, res) => {
@@ -30,35 +33,33 @@ app.get("/notes", (req, res) => {
 
 app.get("/api/notes", (req, res) => {res.json(notesDb);})
 
-//POST Routes
-app.post("/api/notes", (req, res) => {
-    console.info(`${req.method} request recieved to add a note`);
 
-    const { title, text } = req.body;
+//POST Routes
+
+app.post("/api/notes", (req, res) => {
+    console.info(`Post request recieved to add a note`);
+
+    const { title, text, id } = req.body;
     if (req.body) {
-        const newNote ={
+        const newNotes = {
             title,
             text,
-            note_id: uuid(),
+            id: uuid(),
         };
 
-   const noteString = JSON.stringify(newNote);
-    
-   fs.writeFile('./db/db.json', noteString, (err) =>
-    err ? console.error(err) : console.log(' Data written to db.json ') )
-    }
-}); 
-  
-   
+        notesDb.push(newNotes);
 
-    
+        fs.writeFile = ('./db/db.json', JSON.stringify(newNotes), (err) => {
+         err ? console.error(err) : console.info(`Data written to db.json`)
+        });
 
-// 
-// create note - takes in JSON input
-// add.post("/api/notes/title" ,)
+        res.json(notesDb);
+        console.info(`Post added note`);
+    }   
+});
 
 //listener
+
 app.listen(PORT, function () {
     console.log(`Listening to http://localhost:${PORT}`)
 });
-//app.listen(PORT, () => console.log('test'));
