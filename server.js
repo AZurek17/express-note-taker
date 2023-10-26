@@ -58,10 +58,6 @@ app.post("/api/notes", (req, res) => {
     }   
 });
 
-app.delete("/api/notes/:id", (req, res) => {
-    console.info(`Delete request recieved to delete note`);
-})
-
 //listener
 
 app.listen(PORT, function () {
