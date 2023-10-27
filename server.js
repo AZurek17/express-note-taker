@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const notesDb = require('./db/db.json');
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 //generating unique ids
@@ -91,6 +91,6 @@ app.delete("/api/notes/:id", (req, res) => {
     });
 
 //listener
-app.listen(port, function () {
-    console.log(`Listening to http://localhost:${port}`)
+app.listen(PORT, function () {
+    console.log(`Listening to http://localhost:${PORT}`)
 });

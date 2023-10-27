@@ -2,8 +2,6 @@
 
 [Visit the Deployed Site](https://morning-garden-10823-40d8fafb7316.herokuapp.com/)
 
-<!--  [Visit the Deployed Site](https://git.heroku.com/morning-garden-10823.git)-->
-
 ## Technology Used:
 
 * node - https://nodejs.org/en/about
@@ -12,7 +10,7 @@
 
 ## Description
 
-This application allows a user to write, save, and delete notes, so you can keep track of tasks. The application uses Express.js back end which saves and retrieves data from a JSON file.
+This application allows a user to write, save, and delete notes, so you can keep track of tasks. The application uses Express.js back end which saves and retrieves data from a JSON file. Starter code was provided for this project, see link in Credits. 
 
 ## Table of Contents
   
@@ -26,7 +24,9 @@ This application allows a user to write, save, and delete notes, so you can keep
 
  ## Installation
 
- This application requires express.js. To install run: nmp install.
+ This application requires express.js. 
+ * To install run: npm install. 
+ * To start the program, run: node server.js
 
  ## Usage
 
@@ -88,10 +88,10 @@ Unique ID generater used to add IDs to notes:
 
  ## Credits
 
- * Tutor Session
  * ChatGPT
  * StudyGroup
  * AskBCS Learning Assistant
+ * [link to starter code](https://github.com/coding-boot-camp/miniature-eureka)
 
  &copy;2023, Written by Andy Zurek
 
