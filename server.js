@@ -4,7 +4,7 @@ const fs = require('fs');
 // const util = require('util');
 const notesDb = require('./db/db.json');
 
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 
 //generating unique ids
@@ -43,11 +43,11 @@ app.use(express.static('public'));
 
 //GET Routes
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public/index.html"))
+    res.sendFile(path.join(__dirname, "./public/index.html"))
 });
 
 app.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "public/notes.html"))
+    res.sendFile(path.join(__dirname, "./public/notes.html"))
 });
 
 app.get("/api/notes", (req, res) => {res.json(notesDb);}
@@ -73,16 +73,17 @@ app.post("/api/notes", (req, res) => {
             status: 'success',
             body: newNotes,
         };
-        
+
         res.json(response);
+        
     } else {
         res.json("Error in posting note")
     }   
 });
-
+app.get("/api/notes", (req, res) => {res.json(notesDb)});
 
 //listener
 
-app.listen(PORT, function () {
-    console.log(`Listening to http://localhost:${PORT}`)
+app.listen(port, function () {
+    console.log(`Listening to http://localhost:${port}`)
 });

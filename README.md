@@ -1,6 +1,6 @@
 # express-note-taker ![GitHub License Badge](https://img.shields.io/badge/License-MIT-yellow)
 
-[Visit the Deployed Site](https://#)
+[Visit the Deployed Site](https://git.heroku.com/morning-garden-10823.git)
 
 ## Technology Used:
 
@@ -97,7 +97,7 @@ Unique ID generater used to add IDs to notes:
  * Tutor Session
  * ChatGPT
  * StudyGroup
-
+ * AskBCS Learning Assistant
 
  &copy;2023, Written by Andy Zurek
 
