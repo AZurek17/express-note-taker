@@ -1,6 +1,8 @@
 # express-note-taker ![GitHub License Badge](https://img.shields.io/badge/License-MIT-yellow)
 
-[Visit the Deployed Site](https://git.heroku.com/morning-garden-10823.git)
+[Visit the Deployed Site](https://morning-garden-10823-40d8fafb7316.herokuapp.com/)
+
+<!--  [Visit the Deployed Site](https://git.heroku.com/morning-garden-10823.git)-->
 
 ## Technology Used:
 
