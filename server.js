@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const notesDb = require('./db/db.json');
+const { log } = require('console');
 const port = process.env.PORT || 3000;
 const app = express();
 
@@ -72,6 +73,24 @@ app.post("/api/notes", (req, res) => {
         res.json("Error in posting note")
     }   
 });
+
+
+//Delete Route
+app.delete("/api/notes/:id", (req, res) => {
+        var id = parseInt(req.params.id); 
+
+        for (let i = 0; i < notesDb.length; i++) {
+            if (notesDb[i].id === id) {
+                notesDb.splice(i, 1);
+            }
+        }    
+        
+        console.log(notesDb);
+        
+        fs.writeFile('./db/db.json', JSON.stringify(notesDb), (err) =>
+            err ? console.error(err) : res.json(notesDb)
+        );
+    });
 
 //listener
 
