@@ -1,7 +1,6 @@
 # express-note-taker ![GitHub License Badge](https://img.shields.io/badge/License-MIT-yellow)
 
 [Visit the Deployed Site](https://#)
-[Link to Walkthrough Video](https://#)
 
 ## Technology Used:
 
